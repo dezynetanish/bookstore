@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Books</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-[#f7f1e8] text-[#38291f]">
+    <%- include('includes/nav.ejs') %>
+    <h1 class="mt-8 mb-8 text-center font-serif text-3xl font-medium text-[#4a3026]">
+        Our Books
+    </h1>
+    <% if (isAdmin) { %>
+        <a href="/books/new"
+            class="mx-auto mb-3 block w-fit rounded-lg bg-[#d6b77c] px-5 py-2 text-sm font-semibold text-[#38291f] transition hover:bg-[#c9a968]">
+            Add New Book
+        </a>
+        <a href="/admin/logout"
+            class="mx-auto mb-6 block w-fit rounded-lg bg-[#754c38] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#5a392c]">
+            Logout
+        </a>
+    <% } %>
+    <main class="mx-auto max-w-5xl px-5 pb-10">
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <% books.forEach(book => { %>
+                <div class="overflow-hidden rounded-2xl border border-[#e1d2c0] bg-gradient-to-b from-[#faf6ef] to-[#efe5d7] shadow-md transition duration-300 hover:-translate-y-1 hover:border-[#c9a98b] hover:shadow-xl">
+                    <% if (book.image) { %>
+                        <img
+                            src="<%= book.image.startsWith('/uploads/') ? book.image : '/uploads/' + book.image %>"
+                            alt="<%= book.title %>"
+                            class="h-64 w-full bg-[#efe5d7] object-contain p-4"
+                            loading="lazy"
+                        >
+                    <% } else { %>
+                        <div class="flex h-64 items-center justify-center bg-[#efe5d7] text-[#9a8778]">
+                            No Image Available
+                        </div>
+                    <% } %>
+                    <div class="bg-gradient-to-b from-[#faf6ef] to-[#f7f1e8] p-6">
+                        <h2 class="mb-4 font-serif text-xl font-semibold text-[#4a3026]">
+                            <%= book.title %>
+                        </h2>
+                        <div class="space-y-3 text-sm">
+                            <p>
+                                <span class="text-[#766457]">Author:</span>
+                                <span class="ml-1 font-medium"><%= book.author %></span>
+                            </p>
+                            <p>
+                                <span class="text-[#766457]">Price:</span>
+                                <span class="ml-1 font-bold text-[#754c38]">
+                                    ₹<%= book.price %>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="text-[#766457]">Category:</span>
+                                <span class="ml-1 inline-block rounded-full bg-[#efe5d7] px-3 py-1 text-xs font-medium text-[#754c38]">
+                                    <%= book.category %>
+                                </span>
+                            </p>
+                            
+                        </div>
+                        <% if (isAdmin) { %>
+                            <div class="mt-5 flex gap-2">
+                                <form action="/books/delete/<%= book._id %>" method="POST">
+                                    <button type="submit" class="rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-600">
+                                        Delete
+                                    </button>
+                                </form>
+                                <form action="/books/edit/<%= book._id %>" method="GET">
+                                    <button type="submit" class="rounded-lg bg-[#9a6847] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#754c38]">
+                                        Edit
+                                    </button>
+                                </form>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+    <footer class="bg-[#4a3026] py-5 text-center text-sm text-[#f4e9dc]/80">
+        Read. Learn. Grow. © The Book Store
+    </footer>
+</body>
+</html>

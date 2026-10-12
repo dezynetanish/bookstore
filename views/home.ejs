@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book Store</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-[#f7f1e8] text-[#38291f]">
+
+    <%- include('includes/nav.ejs') %>
+
+    <section class="bg-[#4a3026] px-5 py-20 text-white sm:py-24">
+    <div class="mx-auto max-w-3xl text-center">
+
+        <p class="text-sm uppercase tracking-[4px] text-[#d6b77c]">
+            Welcome to The Book Store
+        </p>
+
+        <h1 class="mt-4 font-serif text-4xl font-medium leading-tight sm:text-6xl">
+            Poetry That enters in your soul.
+        </h1>
+
+        <p class="mx-auto mt-5 max-w-2xl font-serif text-lg italic leading-8 text-[#f4e9dc]/80">
+           Discover a world of words, where poetry touches the soul, stories spark imagination, and knowledge never ends.
+        </p>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="/books"
+                class="rounded-lg bg-[#d6b77c] px-6 py-3 font-semibold text-[#38291f] transition hover:-translate-y-1 hover:bg-[#f7f1e8]">
+                Explore Collection →
+            </a>
+
+            <a href="/categories"
+                class="rounded-lg border border-[#f4e9dc]/40 px-6 py-3 font-semibold transition hover:bg-white/10">
+                Browse Categories
+            </a>
+        </div>
+
+    </div>
+</section>
+
+    <section class="mx-auto max-w-5xl px-5 py-20">
+        <div class="grid items-center gap-10 md:grid-cols-2">
+
+            <img src="/uploads/mainn.jpg" alt="Bookstore"
+                class="h-80 w-full rounded-2xl object-cover shadow-[0_18px_45px_-20px_rgba(74,48,38,0.5)]">
+
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-widest text-[#9a6847]">
+                    About Our Store
+                </p>
+
+                <h2 class="mt-2 font-serif text-3xl font-medium sm:text-4xl">
+                    More Than Just Books
+                </h2>
+
+                <p class="mt-4 leading-7 text-[#6c5a4d]">
+                    Our bookstore is a place where stories, knowledge and imagination
+                    come together. Whether you love fiction, history, self-help or
+                    fantasy, there is always something new to discover.
+                </p>
+
+                <p class="mt-3 leading-7 text-[#6c5a4d]">
+                    We believe that the right book can introduce a new idea, teach a
+                    valuable lesson or simply make your day better.
+                </p>
+
+                <a href="/about"
+                    class="mt-6 inline-block rounded-lg bg-[#754c38] px-5 py-2.5 text-white transition hover:bg-[#5a392c]">
+                    Discover Our Story →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="bg-[#efe5d7] px-5 py-16">
+        <div class="mx-auto max-w-5xl">
+
+            <div class="flex items-end justify-between">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-widest text-[#9a6847]">
+                        Find Your Interest
+                    </p>
+                    <h2 class="mt-1 font-serif text-3xl font-medium">Explore Categories</h2>
+                    <p class="mt-2 text-[#766457]">
+                        Discover books based on your interests.
+                    </p>
+                </div>
+
+                <a href="/categories"
+                    class="hidden font-semibold text-[#754c38] hover:text-[#a16f4f] sm:block">
+                    View All Categories →
+                </a>
+            </div>
+
+            <div class="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 md:grid-cols-4">
+
+                <a href="/categories/History"
+                    class="flex h-full min-h-40 flex-col rounded-t-xl rounded-b-md border border-[#e1d2c0] border-l-4 border-l-[#9a6847] bg-[#faf6ef] p-5 transition hover:-translate-y-1 hover:shadow-md">
+                    <span class="text-2xl">📜</span>
+                    <h3 class="mt-3 font-serif text-lg font-semibold">History</h3>
+                    <p class="mt-auto pt-2 text-sm text-[#766457]">
+                        Explore the past.
+                    </p>
+                </a>
+
+                <a href="/categories/Self Helps"
+                    class="flex h-full min-h-40 flex-col rounded-t-xl rounded-b-md border border-[#e1d2c0] border-l-4 border-l-[#b27b4b] bg-[#faf6ef] p-5 transition hover:-translate-y-1 hover:shadow-md">
+                    <span class="text-2xl">🌱</span>
+                    <h3 class="mt-3 font-serif text-lg font-semibold">Self Help</h3>
+                    <p class="mt-auto pt-2 text-sm text-[#766457]">
+                        Improve and grow.
+                    </p>
+                </a>
+
+                <a href="/categories/Magic Systems"
+                    class="flex h-full min-h-40 flex-col rounded-t-xl rounded-b-md border border-[#e1d2c0] border-l-4 border-l-[#754c38] bg-[#faf6ef] p-5 transition hover:-translate-y-1 hover:shadow-md">
+                    <span class="text-2xl">✨</span>
+                    <h3 class="mt-3 font-serif text-lg font-semibold">Fantasy</h3>
+                    <p class="mt-auto pt-2 text-sm text-[#766457]">
+                        Enter new worlds.
+                    </p>
+                </a>
+
+                <a href="/categories"
+                    class="flex h-full min-h-40 flex-col rounded-t-xl rounded-b-md border-l-4 border-l-[#d6b77c] bg-[#754c38] p-5 text-white transition hover:-translate-y-1 hover:bg-[#5a392c] hover:shadow-md">
+                    <span class="text-2xl">📚</span>
+                    <h3 class="mt-3 font-serif text-lg font-semibold">View All</h3>
+                    <p class="mt-auto pt-2 text-sm text-white/75">
+                        Explore every category.
+                    </p>
+                </a>
+
+            </div>
+            <div aria-hidden="true" class="mt-2 h-2 rounded-full bg-[#9a6847] shadow-[0_4px_0_#6b4634]"></div>
+
+        </div>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-5 py-20">
+
+        <div class="mb-8 flex items-end justify-between">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-widest text-[#9a6847]">
+                    Our Collection
+                </p>
+                <h2 class="mt-1 font-serif text-3xl font-medium">Featured Reading</h2>
+                <p class="mt-2 text-[#766457]">
+                    Something interesting is always waiting for you.
+                </p>
+            </div>
+
+            <a href="/books"
+                class="font-semibold text-[#754c38] hover:text-[#a16f4f]">
+                View All Books →
+            </a>
+        </div>
+
+        <div class="grid auto-rows-fr gap-5 md:grid-cols-3">
+
+            <div class="flex h-full min-h-52 flex-col rounded-t-xl rounded-b-md border border-[#e7dbcc] border-l-4 border-l-[#9a6847] bg-[#fffdf9] p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <span class="text-3xl">📖</span>
+                <h3 class="mt-4 font-serif text-xl font-semibold">Discover New Stories</h3>
+                <p class="mt-auto pt-3 leading-6 text-[#6c5a4d]">
+                    Find stories that entertain, inspire and take you somewhere new.
+                </p>
+            </div>
+
+            <div class="flex h-full min-h-52 flex-col rounded-t-xl rounded-b-md border border-[#e7dbcc] border-l-4 border-l-[#b27b4b] bg-[#fffdf9] p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <span class="text-3xl">💡</span>
+                <h3 class="mt-4 font-serif text-xl font-semibold">Learn Something New</h3>
+                <p class="mt-auto pt-3 leading-6 text-[#6c5a4d]">
+                    Build your knowledge with books that teach useful ideas and skills.
+                </p>
+            </div>
+
+            <div class="flex h-full min-h-52 flex-col rounded-t-xl rounded-b-md border border-[#e7dbcc] border-l-4 border-l-[#754c38] bg-[#fffdf9] p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <span class="text-3xl">❤️</span>
+                <h3 class="mt-4 font-serif text-xl font-semibold">Read What You Love</h3>
+                <p class="mt-auto pt-3 leading-6 text-[#6c5a4d]">
+                    From casual readers to book lovers, there is something for everyone.
+                </p>
+            </div>
+
+        </div>
+        <div aria-hidden="true" class="mt-2 h-2 rounded-full bg-[#9a6847] shadow-[0_4px_0_#6b4634]"></div>
+    </section>
+
+
+    <section class="bg-[#4a3026] px-5 py-16 text-center text-white">
+    <p class="text-sm uppercase tracking-[4px] text-[#d6b77c]">
+        Get In Touch
+    </p>
+
+    <h2 class="mt-2 font-serif text-3xl font-medium sm:text-4xl">
+        Have a Question?
+    </h2>
+
+    <p class="mx-auto mt-3 max-w-xl leading-7 text-[#f4e9dc]/80">
+        We'd love to hear from you. Contact us for any questions, suggestions
+        or information about our bookstore.
+    </p>
+
+    <a href="/contact"
+        class="mt-6 inline-block rounded-lg bg-[#d6b77c] px-7 py-3 font-semibold text-[#38291f] transition hover:-translate-y-1 hover:bg-[#f7f1e8]">
+        Contact Us →
+    </a>
+</section>
+
+    <footer class="bg-[#30221c] py-5 text-center text-sm text-white/60">
+        Read. Learn. Grow. © The Book Store
+    </footer>
+
+</body>
+</html>
