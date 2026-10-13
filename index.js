@@ -32,7 +32,7 @@ const transport = nodemailer.createTransport({
 });
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/bookstore');
+    await mongoose.connect('mongodb://tanish:1Euoiut8IkhAWNme@ac-pzuboav-shard-00-00.w7bm3u1.mongodb.net:27017,ac-pzuboav-shard-00-01.w7bm3u1.mongodb.net:27017,ac-pzuboav-shard-00-02.w7bm3u1.mongodb.net:27017/?ssl=true&replicaSet=atlas-ds24cx-shard-0&authSource=admin&appName=Cluster0');
 }
 main()
 .then(() => {console.log('Connected to MongoDB')})
